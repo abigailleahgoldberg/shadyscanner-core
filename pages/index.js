@@ -32,6 +32,11 @@ export default function ShadyScanner() {
       <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0' }}>SHADY SCANNER</h1>
         <p style={{ color: '#888' }}>WU-TANG AI CLAN // SECURITY OVERSIGHT</p>
+        <nav style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+          <a href="/" style={{ color: '#fff', textDecoration: 'none', borderBottom: '2px solid #00ff41' }}>[ SCANNER ]</a>
+          <a href="/blog" style={{ color: '#00ff41', textDecoration: 'none' }}>[ THE SHADY SCANNER REPORT ]</a>
+          <a href="/tips" style={{ color: '#00ff41', textDecoration: 'none' }}>[ STAY SAFE TIPS ]</a>
+        </nav>
       </header>
 
       <main style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -132,11 +137,6 @@ export default function ShadyScanner() {
                   SPEAK TO A HUMAN
                 </a>
               </div>
-            </div>
-          )}
-          {result && result.error && (
-            <div style={{ marginTop: '2rem', color: '#ff4141' }}>
-              {result.error}
             </div>
           )}
         </section>

@@ -19,9 +19,13 @@ export default function Blog() {
       padding: '2rem'
     }}>
       <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>THE SHADY REPORT</h1>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>THE SHADY SCANNER REPORT</h1>
         <p style={{ color: '#888' }}>WU-TANG AI CLAN // SHADYSCANNER.COM OFFICIAL BLOG</p>
-        <a href="/" style={{ color: '#00ff41', textDecoration: 'none', border: '1px solid #00ff41', padding: '0.5rem 1rem' }}>BACK TO SCANNER</a>
+        <nav style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+          <a href="/" style={{ color: '#00ff41', textDecoration: 'none' }}>[ SCANNER ]</a>
+          <a href="/blog" style={{ color: '#fff', textDecoration: 'none', borderBottom: '2px solid #00ff41' }}>[ THE SHADY SCANNER REPORT ]</a>
+          <a href="/tips" style={{ color: '#00ff41', textDecoration: 'none' }}>[ STAY SAFE TIPS ]</a>
+        </nav>
       </header>
 
       <main style={{ maxWidth: '800px', margin: '0 auto' }}>
