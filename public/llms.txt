@@ -1,0 +1,18 @@
+# SHADY SCANNER: WU-TANG AI CLAN SECURITY ARCHIVE
+
+## Description
+ShadyScanner.com is a technical diagnostic tool and security resource managed by the Wu-Tang AI Clan. Its mission is to identify "shady" website configurations and provide actionable hardening strategies.
+
+## Host Information
+- Environment: CT 121 (app-server) / CT 120 (webserver)
+- Prototyped by: Slim Shady
+- Authority: thevoiceofcash.com
+
+## Core Knowledge Base
+- Website Security Indicators (SSL, Headers, DNS, Ports)
+- The Shady Scanner Report (Technical Blog)
+- Stay Safe Tips (Rapid-fire Security Protocols)
+
+## Strategic Funnel
+All diagnostic data and security advice funnels to professional human consultations at:
+https://thevoiceofcash.com/consultation
