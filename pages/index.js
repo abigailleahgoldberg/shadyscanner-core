@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ShieldCheck, ShieldAlert, AlertCircle, Search, ExternalLink, Activity, Info, FileText } from 'lucide-react';
 
 export default function ShadyScanner() {
   const [url, setUrl] = useState('');
@@ -11,21 +10,15 @@ export default function ShadyScanner() {
     setScanning(true);
     setResult(null);
     
-    // Simulate backend scan for phase 1 demo
-    setTimeout(() => {
-      setResult({
-        domain: url,
-        shadyScore: 82,
-        status: 'Safe',
-        indicators: [
-          { name: 'SSL/TLS Health', status: 'pass', detail: 'TLS 1.3 Active - Expires in 84 days' },
-          { name: 'Security Headers', status: 'warn', detail: 'Missing HSTS and CSP' },
-          { name: 'Open Ports', status: 'pass', detail: 'Only 80/443 exposed' },
-          { name: 'DNS Security', status: 'warn', detail: 'DMARC not configured' }
-        ]
-      });
+    try {
+      const response = await fetch(`/api/scan?url=${url}`);
+      const data = await response.json();
+      setResult(data);
+    } catch (e) {
+      setResult({ error: 'SCAN FAILED' });
+    } finally {
       setScanning(false);
-    }, 2000);
+    }
   };
 
   return (
@@ -48,7 +41,7 @@ export default function ShadyScanner() {
           backgroundColor: '#111',
           borderRadius: '4px'
         }}>
-          <form onClick={startScan} style={{ display: 'flex', gap: '1rem' }}>
+          <form style={{ display: 'flex', gap: '1rem' }}>
             <input 
               type="text" 
               placeholder="ENTER DOMAIN TO SCAN (e.g. google.com)" 
@@ -64,7 +57,8 @@ export default function ShadyScanner() {
               }}
             />
             <button 
-              type="submit"
+              type="button"
+              onClick={startScan}
               disabled={scanning}
               style={{
                 padding: '1rem 2rem',
@@ -79,7 +73,7 @@ export default function ShadyScanner() {
             </button>
           </form>
 
-          {result && (
+          {result && !result.error && (
             <div style={{ marginTop: '3rem' }}>
               <div style={{ 
                 display: 'flex', 
@@ -135,9 +129,14 @@ export default function ShadyScanner() {
                     fontWeight: 'bold'
                   }}
                 >
-                  BOOK CONSULTATION
+                  SPEAK TO A HUMAN
                 </a>
               </div>
+            </div>
+          )}
+          {result && result.error && (
+            <div style={{ marginTop: '2rem', color: '#ff4141' }}>
+              {result.error}
             </div>
           )}
         </section>
