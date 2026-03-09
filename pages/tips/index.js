@@ -11,12 +11,12 @@ const tips = [
   { id: 8, category: 'SOCIAL', title: 'SIM Swap Protection', detail: 'Call your carrier and add a "Port-Out PIN". Your phone number is the weakest link in your security.' },
   { id: 9, category: 'BROWSER', title: 'Separate Your Lives', detail: 'Use Different Browser Profiles (Firefox Containers) for work, personal, and shady site browsing.' },
   { id: 10, category: 'HARDWARE', title: 'Buy a YubiKey', detail: 'Hardware codes beat SMS codes 100% of the time. Phishing-proof your identity.' },
-  { id: 11, category: 'RECOVERY', title: 'Print Your Backup Codes', detail: 'If you lose your MFA device and haven'\''t saved your 10 recovery codes offline, you'\''re locked out forever.' },
+  { id: 11, category: 'RECOVERY', title: 'Print Your Backup Codes', detail: "If you lose your MFA device and haven't saved your 10 recovery codes offline, you're locked out forever." },
   { id: 12, category: 'API', title: 'Scope Your Tokens', detail: 'Never create a "Full Access" API token. Give it the absolute minimum permissions needed to function.' },
   { id: 13, category: 'ROUTER', title: 'Update Your Firmware', detail: 'Your home router is an at-risk Linux server. If the manufacturer stopped updates, the hardware is tech-trash.' },
   { id: 14, category: 'METADATA', title: 'Scrub Your Photos', detail: 'Posting a photo from home? Strip the GPS coordinates first or everyone knows your origin.' },
   { id: 15, category: 'PHISHING', title: 'Hover Before You Click', detail: 'Links are masks. Hover over every link to see the ACTUAL destination in the bottom corner of your browser.' },
-  { id: 16, category: 'BACKUPS', title: 'The 3-2-1 Rule', detail: '3 copies, 2 different media types, 1 stored off-site. If it doesn'\''t exist in 3 places, it doesn'\''t exist.' },
+  { id: 16, category: 'BACKUPS', title: 'The 3-2-1 Rule', detail: "3 copies, 2 different media types, 1 stored off-site. If it doesn't exist in 3 places, it doesn't exist." },
   { id: 17, category: 'DNS', title: 'Use Quad9 or 1.1.1.1', detail: 'Default ISP DNS is slow and monitors your traffic. Switch to a secure, private resolver at the router level.' },
   { id: 18, category: 'ENCRYPTION', title: 'Check the "Lock" Details', detail: 'A green lock just means the connection is encrypted, not that the site is safe. Verify the Certificate Owner.' }
 ];
