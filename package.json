@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "latest",
+    "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest",
-    "clsx": "latest",
+    "stripe": "^20.4.1",
     "tailwind-merge": "latest"
   }
 }
