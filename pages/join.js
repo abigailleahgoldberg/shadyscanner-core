@@ -29,26 +29,28 @@ export default function Join() {
   const sub     = monthly ? 'Billed monthly. Cancel anytime.' : 'Billed once per year. Cancel anytime.';
   const badge   = !monthly ? 'Save 17% — 2 months free' : null;
 
+  // Purchasing is temporarily disabled — coming soon
   const handleCheckout = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res  = await fetch('/api/stripe-checkout', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ plan, billing }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        setError(data.error || 'Something went wrong. Please try again.');
-        setLoading(false);
-      }
-    } catch (e) {
-      setError('Network error — please try again.');
-      setLoading(false);
-    }
+    // Stripe checkout disabled until launch
+    // setLoading(true);
+    // setError(null);
+    // try {
+    //   const res  = await fetch('/api/stripe-checkout', {
+    //     method:  'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body:    JSON.stringify({ plan, billing }),
+    //   });
+    //   const data = await res.json();
+    //   if (data.url) {
+    //     window.location.href = data.url;
+    //   } else {
+    //     setError(data.error || 'Something went wrong. Please try again.');
+    //     setLoading(false);
+    //   }
+    // } catch (e) {
+    //   setError('Network error — please try again.');
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -150,26 +152,23 @@ export default function Join() {
               </div>
             )}
 
-            {/* CTA */}
-            <button onClick={handleCheckout} disabled={loading} style={{
+            {/* CTA — Purchasing disabled, coming soon */}
+            <button disabled style={{
               display: 'block', width: '100%',
-              background: loading ? '#CBD5E1' : 'linear-gradient(135deg, #3B6EF0, #6C5CE7)',
-              color: '#fff', border: 'none',
+              background: '#E2E8F0',
+              color: '#94A3B8', border: '1px solid #CBD5E1',
               padding: '16px', borderRadius: 10,
-              fontWeight: 700, fontSize: 16, cursor: loading ? 'not-allowed' : 'pointer',
+              fontWeight: 700, fontSize: 16, cursor: 'not-allowed',
               fontFamily: "'Inter', system-ui, sans-serif",
-              boxShadow: loading ? 'none' : '0 4px 20px rgba(59,110,240,0.35)',
-              transition: 'all 0.15s',
             }}>
-              {loading ? 'Redirecting to checkout…' : `Get started — ${monthly ? labels.monthlyFull : labels.annualFull} →`}
+              ⏳ Coming Soon
             </button>
 
-            {/* Security note */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 16 }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
-              </svg>
-              <span style={{ fontSize: 12, color: '#94A3B8' }}>Secure checkout · Stripe encrypted · Cancel anytime</span>
+            {/* Coming soon note */}
+            <div style={{ textAlign: 'center', marginTop: 14, padding: '12px 16px', background: '#F8F9FC', border: '1px solid #E2E8F0', borderRadius: 8 }}>
+              <p style={{ fontSize: 13, color: '#64748B', margin: 0 }}>
+                Purchasing will be available soon. Stay tuned.
+              </p>
             </div>
           </div>
 

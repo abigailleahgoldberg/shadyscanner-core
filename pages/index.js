@@ -109,7 +109,7 @@ export default function Home() {
                 onMouseLeave={e => e.currentTarget.style.color = '#64748B'}
               >{label}</a>
             ))}
-            <a href="/join" style={{ marginLeft: 10, background: '#3B6EF0', color: '#fff', fontSize: 13, fontWeight: 700, padding: '7px 18px', borderRadius: 7, textDecoration: 'none' }}>Join $3/mo →</a>
+            <span style={{ marginLeft: 10, background: "#E2E8F0", color: "#94A3B8", fontSize: 13, fontWeight: 700, padding: "7px 18px", borderRadius: 7, cursor: "not-allowed" }}>Coming Soon</span>
           </div>
         </div>
       </nav>
@@ -196,8 +196,8 @@ export default function Home() {
               The Voice of Cash delivers hands-on security hardening for businesses that take their digital posture seriously.
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/join" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #3B6EF0, #6C5CE7)', color: '#fff', padding: '13px 30px', borderRadius: 9, textDecoration: 'none', fontWeight: 700, fontSize: 15, boxShadow: '0 4px 16px rgba(59,110,240,0.3)' }}>Speak to a Specialist →</a>
-              <a href="/join" style={{ display: 'inline-block', background: '#fff', border: '1px solid #CBD5E1', color: '#0F1117', padding: '13px 30px', borderRadius: 9, textDecoration: 'none', fontWeight: 600, fontSize: 15 }}>Get Unlimited Scans — $3/mo</a>
+              <a href="https://thevoiceofcash.com/consultation" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #3B6EF0, #6C5CE7)', color: '#fff', padding: '13px 30px', borderRadius: 9, textDecoration: 'none', fontWeight: 700, fontSize: 15, boxShadow: '0 4px 16px rgba(59,110,240,0.3)' }}>Speak to a Specialist →</a>
+              <span style={{ display: 'inline-block', background: '#E2E8F0', border: '1px solid #CBD5E1', color: '#94A3B8', padding: '13px 30px', borderRadius: 9, fontWeight: 600, fontSize: 15, cursor: 'not-allowed' }}>⏳ Coming Soon</span>
             </div>
           </div>
         </section>
@@ -239,7 +239,7 @@ export default function Home() {
               Unlimited scans, weekly score reports, and full history across every domain you own. No contracts. Cancel anytime.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <a href="/join" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #3B6EF0, #6C5CE7)', color: '#fff', padding: '14px 32px', borderRadius: 9, textDecoration: 'none', fontWeight: 700, fontSize: 16, boxShadow: '0 4px 16px rgba(59,110,240,0.3)' }}>Join for $3/month →</a>
+              <span style={{ display: 'inline-block', background: '#E2E8F0', border: '1px solid #CBD5E1', color: '#94A3B8', padding: '14px 32px', borderRadius: 9, fontWeight: 700, fontSize: 16, cursor: 'not-allowed' }}>⏳ Coming Soon</span>
               <a href="/pricing" style={{ display: 'inline-block', background: '#fff', border: '1px solid #CBD5E1', color: '#475569', padding: '14px 24px', borderRadius: 9, textDecoration: 'none', fontWeight: 500, fontSize: 14 }}>See all plans</a>
             </div>
           </div>

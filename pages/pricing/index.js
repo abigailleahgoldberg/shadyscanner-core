@@ -34,10 +34,11 @@ const PLANS = [
       'All 14 indicators tracked',
       'Priority email support',
     ],
-    cta: 'Join for $3/month',
-    href: '/join',
+    cta: 'Coming Soon',
+    href: null,
     highlight: false,
     accent: '#3B6EF0',
+    comingSoon: true,
   },
   {
     name: 'Pro',
@@ -52,11 +53,12 @@ const PLANS = [
       'Priority support queue',
       'Score comparison dashboard',
     ],
-    cta: 'Get Pro',
-    href: '/join?plan=pro',
+    cta: 'Coming Soon',
+    href: null,
     highlight: true,
     badge: 'Most Popular',
     accent: '#3B6EF0',
+    comingSoon: true,
   },
   {
     name: 'Business',
@@ -71,10 +73,11 @@ const PLANS = [
       'Monthly strategy call',
       'Custom hardening playbook',
     ],
-    cta: 'Get Business',
-    href: 'https://thevoiceofcash.com/consultation',
+    cta: 'Coming Soon',
+    href: null,
     highlight: false,
     accent: '#6C5CE7',
+    comingSoon: true,
   },
 ];
 
@@ -96,7 +99,7 @@ export default function Pricing() {
                 onMouseLeave={e => e.currentTarget.style.color = href === '/pricing' ? '#0F1117' : '#64748B'}
               >{label}</a>
             ))}
-            <a href="/join" style={{ marginLeft: 10, background: '#3B6EF0', color: '#fff', fontSize: 13, fontWeight: 700, padding: '7px 18px', borderRadius: 7, textDecoration: 'none' }}>Join $3/mo →</a>
+            <span style={{ marginLeft: 10, background: '#E2E8F0', color: '#94A3B8', fontSize: 13, fontWeight: 700, padding: '7px 18px', borderRadius: 7, cursor: 'not-allowed' }}>Coming Soon</span>
           </div>
         </div>
       </nav>
@@ -160,27 +163,37 @@ export default function Pricing() {
               </ul>
 
               {/* CTA */}
-              <a href={plan.href} style={{
-                display: 'block', textAlign: 'center',
-                background: plan.highlight ? 'linear-gradient(135deg, #3B6EF0, #6C5CE7)' : '#F8F9FC',
-                color: plan.highlight ? '#fff' : '#0F1117',
-                border: plan.highlight ? 'none' : '1px solid #E2E8F0',
-                padding: '13px 20px', borderRadius: 10, textDecoration: 'none',
-                fontWeight: 700, fontSize: 14,
-                boxShadow: plan.highlight ? '0 4px 16px rgba(59,110,240,0.3)' : 'none',
-                transition: 'all 0.15s',
-              }}
-                onMouseEnter={e => {
-                  if (plan.highlight) { e.currentTarget.style.boxShadow = '0 8px 24px rgba(59,110,240,0.45)'; e.currentTarget.style.transform = 'translateY(-1px)'; }
-                  else { e.currentTarget.style.background = '#F1F5F9'; }
-                }}
-                onMouseLeave={e => {
-                  if (plan.highlight) { e.currentTarget.style.boxShadow = '0 4px 16px rgba(59,110,240,0.3)'; e.currentTarget.style.transform = 'translateY(0)'; }
-                  else { e.currentTarget.style.background = '#F8F9FC'; }
-                }}
-              >{plan.cta} →</a>
+              {plan.comingSoon ? (
+                <button disabled style={{
+                  display: 'block', width: '100%', textAlign: 'center',
+                  background: '#E2E8F0',
+                  color: '#94A3B8',
+                  border: '1px solid #CBD5E1',
+                  padding: '13px 20px', borderRadius: 10,
+                  fontWeight: 700, fontSize: 14, cursor: 'not-allowed',
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                }}>⏳ Coming Soon</button>
+              ) : (
+                <a href={plan.href} style={{
+                  display: 'block', textAlign: 'center',
+                  background: plan.highlight ? 'linear-gradient(135deg, #3B6EF0, #6C5CE7)' : '#F8F9FC',
+                  color: plan.highlight ? '#fff' : '#0F1117',
+                  border: plan.highlight ? 'none' : '1px solid #E2E8F0',
+                  padding: '13px 20px', borderRadius: 10, textDecoration: 'none',
+                  fontWeight: 700, fontSize: 14,
+                  boxShadow: plan.highlight ? '0 4px 16px rgba(59,110,240,0.3)' : 'none',
+                  transition: 'all 0.15s',
+                }}>{plan.cta} →</a>
+              )}
             </div>
           ))}
+        </div>
+
+        {/* Coming soon note */}
+        <div style={{ textAlign: 'center', marginTop: 32, padding: '16px 24px', background: '#F8F9FC', border: '1px solid #E2E8F0', borderRadius: 12 }}>
+          <p style={{ fontSize: 14, color: '#64748B', margin: 0 }}>
+            🔒 <strong style={{ color: '#0F1117' }}>Purchasing will be available soon.</strong> Stay tuned — we're finalizing our payment system.
+          </p>
         </div>
 
         {/* FAQ / compare row */}
